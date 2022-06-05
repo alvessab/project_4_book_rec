@@ -226,7 +226,7 @@ button:hover, button:focus {
   bottom: 0;
   height: 3px;
   width: 70px;
-  background: #facd8a;
+  background: #c7b39e;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
