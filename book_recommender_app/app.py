@@ -7,7 +7,7 @@ from modelHelper import ModelHelper
 
 #init app and class
 app = Flask(__name__)
-modelHelper = ModelHelper()
+# modelHelper = ModelHelper()
 
 
 
@@ -36,6 +36,11 @@ def datatable():
 def workscited():
     # Return template and data
     return render_template("workscited.html")
+
+@app.route("/aboutUS")
+def workscited():
+    # Return template and data
+    return render_template("about.html")
 
 @app.route("/nlp")
 def nlp():
