@@ -17,6 +17,21 @@ def home():
     # Return template and data
     return render_template("index.html")
 
+@app.route("/goodreads")
+def goodreads():
+    # Return template and data
+    return render_template("Goodreads.html")
+
+@app.route("/datatable")
+def datatable():
+    # Return template and data
+    return render_template("Datatable.html")
+
+@app.route("/workscited")
+def workscited():
+    # Return template and data
+    return render_template("workscited.html")
+
 @app.route("/nlp")
 def nlp():
     # Return template and data
