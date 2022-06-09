@@ -22,6 +22,11 @@ def goodreads():
     # Return template and data
     return render_template("Goodreads.html")
 
+@app.route("/tableau")
+def tableau():
+    # Return template and data
+    return render_template("tableau2.html")
+
 @app.route("/datatable")
 def datatable():
     # Return template and data
