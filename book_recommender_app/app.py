@@ -48,18 +48,18 @@ def nlp():
     return render_template("nlp.html")
 
 
-@app.route("/nlpRecommendations", methods=["POST"])
-def recommendation_df():
+# @app.route("/nlpRecommendations", methods=["POST"])
+# def recommendation_df():
 
-    content = request.json["data"]
-    print(content)
+#     content = request.json["data"]
+#     print(content)
 
-    # parse
-    bookTitle = str(content["bookTitle"])
+#     # parse
+#     bookTitle = str(content["bookTitle"])
 
-    recommendation = modelHelper.recommendation_df(bookTitle)
-    print(recommendation)
-    return(jsonify({"ok": True, "recommendation":json.loads(recommendation.to_json(orient="records"))})) 
+#     recommendation = modelHelper.recommendation_df(bookTitle)
+#     print(recommendation)
+#     return(jsonify({"ok": True, "recommendation":json.loads(recommendation.to_json(orient="records"))})) 
 
 
 
