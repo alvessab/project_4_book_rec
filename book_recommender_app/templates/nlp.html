@@ -24,7 +24,7 @@
 
 
     <!-- Other files -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -41,7 +41,7 @@
     <script src="../static/plugins/jquery.min.js"></script>
 
     <!-- bootstrap -->
-    <script src="../static/plugins/bootstrap/bootstrap.min.js"></script>
+    <script  src="../static/plugins/bootstrap/bootstrap.min.js"></script>
 
     <!-- slick slider -->
     <script  src="../static/plugins/slick/slick.min.js"></script>
@@ -83,7 +83,12 @@
             <div class="col-md-12">
                 <div class="title text-center">
                     <p>
-                        NLP Recommender explanation
+                        Want recommendations based on content, rather than rating? Look no further!
+                        The NLP Recommender uses the cosine similarity of the TF-IDF scores from the book’s description. 
+                        It will return the top ten most similar novels to your chosen title.
+                    </p>
+                    <p>
+                        Please type in your chosen title in the box below. Remember to check the Data Table for spelling.
                     </p>
                 </div>
             </div>
@@ -91,13 +96,16 @@
 
 
         <div class="row">
-            <div class="col-md-8">
-                <input type="text" class="form-control" placeholder="Book Title" id='nlp_request' for="bookTitle">
+            <div class="col-md-12">
+                <label class="col-form-label" for="nlp_request">Title Request (case sensitive)</label>
+                <input type="text" class="form-control" 
+                placeholder="Book Title" id="nlp_request">
             </div>
 
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <div class="form-group">
                     <label class="col-form-label" for="rating_min">Minimum Book Ranking</label>
+                    <br>
                     <select id="rating">
                         <option value="1.0" selected="selected">1.0</option>
                         <option value="2.0">2.0</option>
@@ -105,7 +113,7 @@
                         <option value="4.0">4.0</option>
                     </select>
                 </div>
-            </div>
+            </div> -->
 
         </div>
 
@@ -117,7 +125,7 @@
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <div class="contact-btn text-center">
-                    <input class="btn btn-default btn-main" type="submit" value="Get Recommendations" id="search">
+                    <input class="btn btn-default btn-main" type="submit" value="Get Recommendations" id="filter">
                     </div>
             </div>
             <div class="col-md-3"></div>
@@ -130,35 +138,59 @@
         <br>
         <br>
 
-        <!-- golden snitch gif -->
-        <div class="row">
-            <div class="col-md-9"></div>
-            <div class="col-md-3">
-                <!-- <iframe src="https://giphy.com/embed/VFkOWLClKZp8ehnzdZ" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/harry-potter-catalina-williams-colorfuel-VFkOWLClKZp8ehnzdZ">via GIPHY</a></p> -->
-            </div>
-        </div>
-        
+
     </div>
 
-    <hr style="color:lightgray; border-width: 3px;">
-    <div class="container-fluid">
+    <br>
+    <br>
+
+    <!-- <div class="container-fluid">
+        <div class= "row">
+            <div class="col-md-2">
+                <img  id="url1" target='_blank'  width="25" height="25" ></img>
+            </div>
+        </div>    
+    
+    </div> -->
+
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 id="output"></h1>
+                <table id="output" class="table table-bordered ">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Description</th>
+                            <th>Genre</th>
+                            <th>Rating</th>
+                            <th>Similarity Score</th>
+                            <th>URL</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+
+                </table>
             </div>
         </div>
     </div>
 
+    <br>
+    <br>
     <br>
     <br>
 
     <div class="container-fluid">
               <!-- golden snitch gif -->
               <div class="row">
-                <div class="col-md-9"></div>
-                <div class="col-md-3">
-                    <!-- <iframe src="https://giphy.com/embed/VFkOWLClKZp8ehnzdZ" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/harry-potter-catalina-williams-colorfuel-VFkOWLClKZp8ehnzdZ">via GIPHY</a></p> -->
+                <div class="col-sm-7"></div>
+                <div class="col-sm-5">
+                    <iframe src="https://giphy.com/embed/VFkOWLClKZp8ehnzdZ" width="480" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/harry-potter-catalina-williams-colorfuel-VFkOWLClKZp8ehnzdZ">via GIPHY</a></p>
                 </div>
+
             </div>
     </div>
 

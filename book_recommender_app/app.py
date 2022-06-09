@@ -17,27 +17,24 @@ def home():
     # Return template and data
     return render_template("index.html")
 
+@app.route("/nlp")
+def nlp():
+    # Return template and data
+    return render_template("nlp.html")
 
 
-
-@app.route("/nlp", methods=["POST"])
+@app.route("/nlpRecommendations", methods=["POST"])
 def recommendation_df():
 
     content = request.json["data"]
-
     print(content)
+
     # parse
     bookTitle = str(content["bookTitle"])
-    rating_min = float(content["rating_min"])
 
-    #dummy data
-    #bookTitle = 'The Hunger Games'
-    #rating_min = 1.0
-
-    recommendation = modelHelper.recommendation_df(rating_min, bookTitle)
+    recommendation = modelHelper.recommendation_df(bookTitle)
     print(recommendation)
-    return(jsonify({"ok": True, "recommendation": (recommendation)}))
-
+    return(jsonify({"ok": True, "recommendation":json.loads(recommendation.to_json(orient="records"))})) 
 
 
 
