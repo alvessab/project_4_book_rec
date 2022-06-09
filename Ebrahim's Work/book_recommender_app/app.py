@@ -43,18 +43,11 @@ def knnRecommender():
     content = request.json["data"]
 
     # parse
-    genre = content["genre"]
-    score = float(content["score"])
     bookTitle = content["bookTitle"]
 
-    prediction = modelHelper.knnRecommender(bookTitle, genre, score)
+    prediction = modelHelper.knnRecommender(bookTitle)
 
     return prediction
-
-
-
-
-
 
 @app.after_request
 def add_header(r):
