@@ -42,6 +42,11 @@ def aboutus():
     # Return template and data
     return render_template("about.html")
 
+@app.route("/paper")
+def paper():
+    # Return template and data
+    return render_template("paper.html")
+
 @app.route("/nlp")
 def nlp():
     # Return template and data
