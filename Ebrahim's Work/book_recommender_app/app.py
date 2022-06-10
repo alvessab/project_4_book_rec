@@ -34,7 +34,6 @@ def knn_recommender():
 
     recommendation = modelHelper.knn_recommender(bookTitle)
     print(f"Recommendation: {recommendation}")
-    # return(jsonify({"ok": True, "recommendation":json.loads(recommendation.to_json(orient="records"))}))
     return jsonify(recommendation)
 
 @app.after_request
