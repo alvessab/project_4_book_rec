@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>NLP Recommender</title>
+    <title>KNN Recommender</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -36,7 +36,7 @@
     <script src="../static/plugins/modernizr.min.js"></script>
 
     <!-- logic.js file -->
-    <script type="text/javascript" src="../static/js/logic.js"></script>
+    <script type="text/javascript" src="../static/js/logic_knn.js"></script>
 
     <script src="../static/plugins/jquery.min.js"></script>
 
@@ -143,7 +143,7 @@
             <div class="col-md-12">
                 <div class="title text-center">
                     <p>
-                        NLP Recommender explanation
+                        KNN Recommender explanation
                     </p>
                 </div>
             </div>
@@ -152,7 +152,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <input type="text" class="form-control" placeholder="Book Title" id='knn_request' for="bookTitle">
+                <input type="text" class="form-control" placeholder="Book Title" id='bookTitle' for="bookTitle">
             </div>
         </div>
 
@@ -189,12 +189,27 @@
 
     <hr style="color:lightgray; border-width: 3px;">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 id="output"></h1>
-            </div>
+      <div class="row">
+        <div class="col-md-12">
+            <table id="output" class="table table-bordered ">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Description</th>
+                        <th>Genre</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+
+            </table>
         </div>
     </div>
+  </div>
 
     <br>
     <br>
@@ -210,3 +225,5 @@
     </div>
 
   </body>
+
+  </html>

@@ -3,13 +3,15 @@ import json
 import pandas as pd
 import numpy as np
 import os
-from modelHelper import ModelHelper
+import logging
+from modelHelper2 import ModelHelper
+
 
 #init app and class
 app = Flask(__name__)
 modelHelper = ModelHelper()
 
-
+app.logger.setLevel(logging.DEBUG)
 
 # Route to render index.html template
 @app.route("/")
@@ -17,37 +19,23 @@ def home():
     # Return template and data
     return render_template("index.html")
 
+@app.route('/knn_rec')
+def knn():
+    return render_template('knn_rec.html')
 
-
-
-@app.route("/nlp", methods=["POST"])
-def recommendation_df():
+@app.route("/knn", methods=["POST"])
+def knn_recommender():
 
     content = request.json["data"]
+    print(f"CONTENT: {content}")
 
-    print(content)
     # parse
     bookTitle = str(content["bookTitle"])
-    rating_min = float(content["rating_min"])
 
-    #dummy data
-    #bookTitle = 'The Hunger Games'
-    #rating_min = 1.0
-
-    recommendation = modelHelper.recommendation_df(rating_min, bookTitle)
-    print(recommendation)
-    return(jsonify({"ok": True, "recommendation": (recommendation)}))
-
-@app.route("/knnrecommender", methods=["POST"])
-def knnRecommender():
-    content = request.json["data"]
-
-    # parse
-    bookTitle = content["bookTitle"]
-
-    prediction = modelHelper.knnRecommender(bookTitle)
-
-    return prediction
+    recommendation = modelHelper.knn_recommender(bookTitle)
+    print(f"Recommendation: {recommendation}")
+    # return(jsonify({"ok": True, "recommendation":json.loads(recommendation.to_json(orient="records"))}))
+    return jsonify(recommendation)
 
 @app.after_request
 def add_header(r):
@@ -63,4 +51,4 @@ def add_header(r):
 
 #main
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host = '0.0.0.0', port = '8000')
