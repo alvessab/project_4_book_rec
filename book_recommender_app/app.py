@@ -69,18 +69,19 @@ def recommendation_df():
     print(recommendation)
     return(jsonify({"ok": True, "recommendation":json.loads(recommendation.to_json(orient="records"))})) 
 
-@app.route(‘/knn_rec’)
+@app.route("/knn_rec")
 def knn():
-    return render_template(‘knn_rec.html’)
+    return render_template("knn_rec.html")
 
-@app.route(“/knn”, methods=[“POST”])
+
+@app.route("/knn", methods=["POST"])
 def knn_recommender():
-    content = request.json[“data”]
-    print(f”CONTENT: {content}“)
+    content = request.json["data"]
+    print(f"CONTENT: {content}")
     # parse
-    bookTitle = str(content[“bookTitle”])
+    bookTitle = str(content["bookTitle"])
     recommendation = modelHelper.knn_recommender(bookTitle)
-    print(f”Recommendation: {recommendation}“)
+    print(f"Recommendation: {recommendation}")
     return jsonify(recommendation)
 
 
