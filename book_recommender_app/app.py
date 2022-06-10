@@ -3,10 +3,13 @@ import json
 import pandas as pd
 import numpy as np
 import os
-from modelHelper import ModelHelper
+from modelHelper import ModelHelper1
+from modelHelper2 import ModelHelper
+
 
 #init app and class
 app = Flask(__name__)
+modelHelper1 = ModelHelper1()
 modelHelper = ModelHelper()
 
 
@@ -62,10 +65,23 @@ def recommendation_df():
     # parse
     bookTitle = str(content["bookTitle"])
 
-    recommendation = modelHelper.recommendation_df(bookTitle)
+    recommendation = modelHelper1.recommendation_df(bookTitle)
     print(recommendation)
     return(jsonify({"ok": True, "recommendation":json.loads(recommendation.to_json(orient="records"))})) 
 
+@app.route(‘/knn_rec’)
+def knn():
+    return render_template(‘knn_rec.html’)
+
+@app.route(“/knn”, methods=[“POST”])
+def knn_recommender():
+    content = request.json[“data”]
+    print(f”CONTENT: {content}“)
+    # parse
+    bookTitle = str(content[“bookTitle”])
+    recommendation = modelHelper.knn_recommender(bookTitle)
+    print(f”Recommendation: {recommendation}“)
+    return jsonify(recommendation)
 
 
 

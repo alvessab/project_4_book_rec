@@ -1,0 +1,247 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SMU Book Recommender</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="../static/plugins/bootstrap/bootstrap.min.css">
+    <!-- ThemeFisher Icon -->
+    <link rel="stylesheet" href="../static/plugins/themefisher-fonts/themefisher-fonts.css">
+    <!-- Light Box -->
+    <link rel="stylesheet" href="../static/plugins/magnific-popup/magnific-popup.css">
+    <!-- animation css -->
+    <link rel="stylesheet" href="../static/plugins/animate/animate.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="../static/plugins/slick/slick.css">
+
+    <!-- Revolution Slider -->
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map_canvas {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+    </style>
+    <script src="../static/plugins/modernizr.min.js"></script>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../static/plugins/jquery.min.js"></script>
+
+    <script src="../static/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- slick slider -->
+    <script src="../static/plugins/slick/slick.min.js"></script>
+    <!-- filter -->
+    <script src="../static/plugins/filterizr/jquery.filterizr.min.js"></script>
+    <!-- Lightbox -->
+    <script src="../static/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Parallax -->
+    <script src="../static/plugins/parallax.min.js"></script>
+    <!-- Video -->
+    <script src="../static/plugins/jquery.vide.js"></script>
+
+
+    <script src="../static/js/script.js"></script>
+
+  </head>
+
+  <body>
+
+  <!-- Loader to display before content Load-->
+  <div class="loading">
+
+    <!-- <img src="img/loader.gif" alt=""> -->
+
+    <div class="windows8 loading-position">
+      <div class="wBall" id="wBall_1">
+        <div class="wInnerBall"></div>
+      </div>
+      <div class="wBall" id="wBall_2">
+        <div class="wInnerBall"></div>
+      </div>
+      <div class="wBall" id="wBall_3">
+        <div class="wInnerBall"></div>
+      </div>
+      <div class="wBall" id="wBall_4">
+        <div class="wInnerBall"></div>
+      </div>
+      <div class="wBall" id="wBall_5">
+        <div class="wInnerBall"></div>
+      </div>
+    </div>
+  </div> 
+
+
+ <!-- Navigation -section
+  =========================-->
+<nav class="navbar navbar-fixed-top navigation" >
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand logo" href="index.html">
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nlp.html">NLP Recommender</a></li>
+        <li><a href="knn_rec">KNN Recommender</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
+
+ <!-- Header -section
+  =========================-->
+  <header class="hero-area th-fullpage" data-parallax="scroll">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Goodreads Book Recommender<br>
+            Project 4 Group 4</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+ <!-- Introduction Sections
+  =========================-->
+
+  <section class="intro">
+    <div class="text-center">
+      <h2 class="title">Our Project</h2>
+    </div>
+    <!-- Case Study Description
+      top section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              <h4 class="inner-title">Why Books?</h4>
+              <p class="case-description">Have you ever had a hard time deciding what book to read? You ask friends and family but their suggestions ust don't quite hit the mark. We decided to tackle this problem by creating a recommendation program to help you select the book to read.</p>
+              <p>
+                Our inspiration came by looking at the Anime Recommender that had been done by a previous bootcamp, as well as our own personal love for reading. When looking for data sources, found two other book recommender systems that gave us ideas on how to tackle the problem. These were <a href = 'https://towardsdatascience.com/how-did-we-build-book-recommender-systems-in-an-hour-part-2-k-nearest-neighbors-and-matrix-c04b3c2ef55c'>Toward Data Science, How Did We Build Book Recommender Systems in an Hour</a>
+                and <a href = 'https://thecleverprogrammer.com/2021/01/17/book-recommendation-system/'>The Clever Programmer, Book Recommendation System</a>.
+              </p>
+              <!-- View More Details -->
+          </div>
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="static/images/index_pg/book.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Case Study Description
+      bottom section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              <h4 class="inner-title">Our Data</h4>
+              <p class="case-description">The data set we settled upon is the Goodreads Best Books Ever with Recommendations from Kaggle. You can view the data set <a href = 'https://www.kaggle.com/datasets/nguyenphd/goodreads-best-books-ever-with-recommendations'>here</a>.</p>
+              <p>
+                The original plan was to use the Goodreads API, but we soon found out that since the site was aquired by Amazon, the API had been shutdown. We decided to go with a dataset that was pulled from the last time the API was active. The dataset consists of 10,000 of the top books from Goodreads. The books that wre pulled were not language specific either, so books that were not in english but were rated high were included in this dataset. Once the data was cleaned we were able to start doing our EDA.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Case Study Description
+      top section -->
+      <div class="case-study-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <!-- inner sub-title -->
+              <div class="content">
+                <h4 class="inner-title">EDA</h4>
+                <p class="case-description">The most significant part of the initial EDA was removing the unneeded columns of 'recommendations' since we will be creating a program to do that, as well as 'bookISBN' since only 85% of the listed books had them listed. Further EDA was done to allow for NLP to happen. This included sorting the books by their published language and removing the books that were not in English.
+                  From here we dropped all duplicates that were found and we had clean CSV that we could do our analysis on.
+                </p>
+                <!-- View More Details -->
+            </div>
+            <div class="col-md-6">
+              <div class="img-content">
+                <img class="img-responsive" src="" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!-- Case Study Description
+      bottom section -->
+    <div class="case-study-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="img-content">
+              <img class="img-responsive" src="" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <!-- inner sub-title -->
+            <div class="content">
+              <h4 class="inner-title">Recommender Models</h4>
+              <p class="case-description">The first model that was used is based on natural language processing or NLP. The NLP Recommender uses the cosine similarity of the TF-IDF scores from the book’s description. It will return the top ten most similar novels to your chosen title. </p>
+              <p>
+                The second model that we are using is a KNN model. Unlike the NLP model, we are using numeric data to fit the model. Each book is a combination of features that create a data point. The model looks at the distance between each data point and gives recommendations based on the closest data points to the input. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <footer>
+          <div class="footer-nav text-center">
+              <div class="col-md-12">
+                  <ul>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="services.html">Services</a></li>
+                      <li><a href="portfolio.html">Portfolio</a></li>
+                      <li><a href="#">Our Team</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="text-center">
+              <div class="col-md-12">
+                  <div class="copyright">
+                      <p>&copy; 2013-2017 All rights reserved. <br>
+                          Design and Developed By <a href="https://themefisher.com">Themefisher.com</a></p>
+                  </div>
+              </div>
+          </div>
+    </footer>
+  </body>
+</html>

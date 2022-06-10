@@ -9,7 +9,7 @@ df = pd.read_csv("static/data/goodreads_final_bagowords.csv")
 s3 = s3fs.S3FileSystem(anon=True)
 arr1= np.load(s3.open("book-rec-nlp/goodreads_cos_data.npy"))
 
-class ModelHelper():
+class ModelHelper1():
     def __init__(self):
         pass
 
