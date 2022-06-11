@@ -82,36 +82,40 @@
 
  <!-- Navigation -section
   =========================-->
-<nav class="navbar navbar-fixed-top navigation" >
-  <div class="container">
+  <nav class="navbar navbar-fixed-top navigation" >
+    <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand logo" href="index.html">
-      </a>
-    </div>
+        <div class="navbar-header" >
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span>Toggle navigation</span>
+            <span class="icon-bar"></span>
+            </button>
+            <a href="/"><h3>Book Recommender</h3></a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="nlp">NLP Recommender</a></li>
+            <li><a href="knn_rec">KNN Recommender</a></li>
+            <li><a href="tableau">Tableau 1</a></li>
+            <li><a href="goodreads">Tableau 2</a></li>
+            <li><a href="datatable">Data Table</a></li>
+            <li><a href="paper">Final Paper</a></li>
+            <li><a href="aboutUS">About Us</a></li>
+            <li><a href="workscited">Works Cited</a></li>
+            </ul>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="nlp.html">NLP Recommender</a></li>
-        <li><a href="knn_rec">KNN Recommender</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div>
+        </div>
+
+        
+    </div>
 </nav>
 
  <!-- Header -section
   =========================-->
-  <header class="hero-area th-fullpage" data-parallax="scroll">
+  <header class="hero-area th-fullpage" data-parallax="scroll" data-image-src='static/images/index_pg/background.jpeg'>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -140,17 +144,19 @@
               <h4 class="inner-title">Why Books?</h4>
               <p class="case-description">Have you ever had a hard time deciding what book to read? You ask friends and family but their suggestions ust don't quite hit the mark. We decided to tackle this problem by creating a recommendation program to help you select the book to read.</p>
               <p>
-                Our inspiration came by looking at the Anime Recommender that had been done by a previous bootcamp, as well as our own personal love for reading. When looking for data sources, found two other book recommender systems that gave us ideas on how to tackle the problem. These were <a href = 'https://towardsdatascience.com/how-did-we-build-book-recommender-systems-in-an-hour-part-2-k-nearest-neighbors-and-matrix-c04b3c2ef55c'>Toward Data Science, How Did We Build Book Recommender Systems in an Hour</a>
+                Our inspiration came by looking at the Anime Recommender that had been done by a previous bootcamp, as well as our own personal love for reading. When looking for data sources, we found two other book recommender systems that gave us ideas on how to tackle the problem. These were <a href = 'https://towardsdatascience.com/how-did-we-build-book-recommender-systems-in-an-hour-part-2-k-nearest-neighbors-and-matrix-c04b3c2ef55c'>Toward Data Science, How Did We Build Book Recommender Systems in an Hour</a>
                 and <a href = 'https://thecleverprogrammer.com/2021/01/17/book-recommendation-system/'>The Clever Programmer, Book Recommendation System</a>.
               </p>
               <!-- View More Details -->
           </div>
-          <div class="col-md-6">
+        </div>
+          <div class="col-md-6" style='float: right'>
             <div class="img-content">
-              <img class="img-responsive" src="static/images/index_pg/book.jpg">
+              <img class="img-responsive" src="static/images/index_pg/book.jpg" alt=''>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
     <!-- Case Study Description
@@ -158,9 +164,14 @@
     <div class="case-study-content">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-3">
             <div class="img-content">
-              <img class="img-responsive" src="" alt="">
+              <img class="img-responsive" src="static/images/index_pg/goodreads.jpeg" alt="">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="img-content">
+              <img class="img-responsive" src="static/images/index_pg/kaggle.png" alt="">
             </div>
           </div>
           <div class="col-md-6">
@@ -169,7 +180,7 @@
               <h4 class="inner-title">Our Data</h4>
               <p class="case-description">The data set we settled upon is the Goodreads Best Books Ever with Recommendations from Kaggle. You can view the data set <a href = 'https://www.kaggle.com/datasets/nguyenphd/goodreads-best-books-ever-with-recommendations'>here</a>.</p>
               <p>
-                The original plan was to use the Goodreads API, but we soon found out that since the site was aquired by Amazon, the API had been shutdown. We decided to go with a dataset that was pulled from the last time the API was active. The dataset consists of 10,000 of the top books from Goodreads. The books that wre pulled were not language specific either, so books that were not in english but were rated high were included in this dataset. Once the data was cleaned we were able to start doing our EDA.
+                The original plan was to use the Goodreads API, but we soon found out that the API was shutdown in December of 2020. We decided to go with a dataset that was pulled from the last time the API was active. The dataset consists of 10,000 of the top books from Goodreads. The books that were pulled are not language specific either, so books that were not in english but were rated high were included in this dataset. Once the data was cleaned we were able to start doing our EDA.
               </p>
             </div>
           </div>
@@ -190,9 +201,10 @@
                 </p>
                 <!-- View More Details -->
             </div>
+            </div>
             <div class="col-md-6">
               <div class="img-content">
-                <img class="img-responsive" src="" alt="">
+                <img class="img-responsive" src="static/images/index_pg/eda.png" alt="">
               </div>
             </div>
           </div>
@@ -205,7 +217,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="img-content">
-              <img class="img-responsive" src="" alt="">
+              <img class="img-responsive" src="static/images/index_pg/nlp.png" alt="">
             </div>
           </div>
           <div class="col-md-6">
@@ -221,19 +233,30 @@
         </div>
       </div>
     </div>
+           <!-- Case Study Description
+      top section -->
+      <div class="case-study-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <!-- inner sub-title -->
+              <div class="content">
+                <h4 class="inner-title">Tableau</h4>
+                <p class="case-description">Tableau dashboards were created to visualize our data. The first dashboards showcases the highest and most reviewd authors per genre. The second looks at the longest books, authors with the most amount of books published, and average page count per genre. Playing with the dashboards will allow us to see which genres are the most popular, and what authors people like most. This can also give us an insight into what kind of books people will leave reviews for.
+                </p>
+                <!-- View More Details -->
+            </div>
+            </div>
+            <div class="col-md-6">
+              <div class="img-content">
+                <img class="img-responsive" src="static/images/index_pg/tableau.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </section>
     <footer>
-          <div class="footer-nav text-center">
-              <div class="col-md-12">
-                  <ul>
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="services.html">Services</a></li>
-                      <li><a href="portfolio.html">Portfolio</a></li>
-                      <li><a href="#">Our Team</a></li>
-                      <li><a href="contact.html">Contact</a></li>
-                  </ul>
-              </div>
-          </div>
           <div class="text-center">
               <div class="col-md-12">
                   <div class="copyright">
